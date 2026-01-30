@@ -54,24 +54,8 @@ enabled = true
 [params.imageProcessing.content]
 enabled = true
 
-# メニュー設定
-[[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-identifier = "archives"
-name = "Archives"
-url = "/archives/"
-weight = 2
-
-[[menu.main]]
-identifier = "search"
-name = "Search"
-url = "/search/"
-weight = 3
+# メニュー設定は content/page/ のFront Matterで管理
+# [[menu.main]]は削除し、各ページのFront Matterで設定
 
 # タクソノミー設定
 [taxonomies]
