@@ -1,5 +1,5 @@
-baseURL = "https://tsu-nera.github.io/sternstunden/"
-title = "Sternstunden"
+baseURL = "https://tsu-nera.github.io/dandieat/"
+title = "Dandieat"
 author = "きつね"
 languageCode = "ja-jp"
 enableInlineShortcodes = true
