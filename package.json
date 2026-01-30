@@ -9,7 +9,7 @@
   "scripts": {
     "start": "concurrently npm:watch:*",
     "watch:tw": "tailwindcss -i ./themes/Blonde/assets/css/main.css -o ./themes/Blonde/assets/css/style.css --watch",
-    "watch:hugo": "hugo server -D --baseURL http://localhost:1313/ --port 1313",
+    "watch:hugo": "hugo server -D --navigateToChanged --baseURL http://localhost:1313/ --port 1313",
     "build": "tailwindcss -i ./themes/Blonde/assets/css/main.css -o ./themes/Blonde/assets/css/style.css && hugo --minify"
   },
   "devDependencies": {
