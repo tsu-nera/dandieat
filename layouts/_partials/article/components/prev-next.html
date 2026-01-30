@@ -1,0 +1,119 @@
+{{ if or .PrevInSection .NextInSection }}
+<nav class="post-navigation">
+    <div class="post-navigation-wrapper">
+        {{ with .PrevInSection }}
+        <div class="post-nav-item prev">
+            <a href="{{ .RelPermalink }}" rel="prev">
+                <div class="post-nav-direction">← 前の記事</div>
+                <div class="post-nav-title">{{ .Title }}</div>
+                {{ with .Date }}
+                <div class="post-nav-date">{{ .Format "2006-01-02" }}</div>
+                {{ end }}
+            </a>
+        </div>
+        {{ end }}
+
+        {{ with .NextInSection }}
+        <div class="post-nav-item next">
+            <a href="{{ .RelPermalink }}" rel="next">
+                <div class="post-nav-direction">次の記事 →</div>
+                <div class="post-nav-title">{{ .Title }}</div>
+                {{ with .Date }}
+                <div class="post-nav-date">{{ .Format "2006-01-02" }}</div>
+                {{ end }}
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</nav>
+
+<style>
+.post-navigation {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 2px solid var(--card-separator-color, #e0e0e0);
+}
+
+.post-navigation-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .post-navigation-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.post-nav-item {
+    display: block;
+}
+
+.post-nav-item a {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid var(--card-separator-color, #e0e0e0);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 100%;
+    background-color: var(--card-background, #fff);
+}
+
+.post-nav-item a:hover {
+    border-color: var(--accent-color, #4285f4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.post-nav-item.prev {
+    text-align: left;
+}
+
+.post-nav-item.next {
+    text-align: right;
+    grid-column: 2;
+}
+
+@media (max-width: 768px) {
+    .post-nav-item.next {
+        grid-column: 1;
+    }
+}
+
+.post-nav-direction {
+    font-size: 0.875rem;
+    color: var(--card-text-color-tertiary, #999);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.post-nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--card-text-color-main, #333);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.post-nav-date {
+    font-size: 0.875rem;
+    color: var(--card-text-color-secondary, #666);
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .post-nav-item a {
+        background-color: var(--card-background, #2d2d2d);
+        border-color: var(--card-separator-color, #444);
+    }
+
+    .post-nav-title {
+        color: var(--card-text-color-main, #e0e0e0);
+    }
+}
+</style>
+{{ end }}

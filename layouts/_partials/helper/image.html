@@ -1,0 +1,47 @@
+/// Params:
+///     Resources: Where to search for images
+///     Image: Image URL
+
+/// Returns:
+///     Local: true if the image is local, false if it is remote
+///     Resource: Hugo image resource object, not nil if the image is local
+///     Permalink: Image URL
+///     Height: Image height
+///     Width: Image width
+
+{{ $result := dict
+    "Local" false
+    "Resource" nil
+    "Permalink" (.Image | absURL)
+    "Width" nil
+    "Height" nil
+}}
+
+{{ if not .Image }}
+    {{ $result = "" }}
+{{ else }}
+    {{ $url := urls.Parse .Image }}
+    {{ if not (in (slice "https" "http") $url.Scheme) }}
+        {{ $resource := .Resources.Get (printf "%s" (.Image | safeURL)) }}
+        {{ if $resource }}
+            {{ $result = dict
+                "Local" true
+                "Resource" $resource
+                "Permalink" $resource.RelPermalink
+                "Height" $resource.Height
+                "Width" $resource.Width
+            }}
+        {{ end }}
+    {{ else }}
+        {{/* Modified for Hugo < 0.154.0 - removed try function */}}
+        {{ $result = dict
+            "Local" false
+            "Resource" nil
+            "Permalink" (.Image | absURL)
+            "Width" nil
+            "Height" nil
+        }}
+    {{ end }}
+{{ end }}
+
+{{ return $result }}
