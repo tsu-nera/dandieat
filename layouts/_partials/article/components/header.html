@@ -1,0 +1,30 @@
+<header class="article-header">
+    {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources) -}}
+
+    {{/* Front Matterにimageが設定されていない場合、記事内の最後の画像を抽出 */}}
+    {{ if not $image }}
+        {{ $images := findRE "<img[^>]+src=\"([^\"]+)\"[^>]*>" .Content }}
+        {{ if $images }}
+            {{ $lastImage := index $images (sub (len $images) 1) }}
+            {{ $srcMatch := findRE "src=\"([^\"]+)\"" $lastImage }}
+            {{ if $srcMatch }}
+                {{ $src := replaceRE "src=\"([^\"]+)\"" "$1" (index $srcMatch 0) }}
+                {{ $image = dict "Permalink" $src "Width" nil "Height" nil "Local" false "Resource" nil }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ if $image }}
+    <div class="article-image">
+        <a href="{{ .RelPermalink }}">
+            <img src="{{ $image.Permalink }}"
+                {{ if $image.Width }}width="{{ $image.Width }}"{{ end }}
+                {{ if $image.Height }}height="{{ $image.Height }}"{{ end }}
+                loading="lazy"
+                alt="Featured image of post {{ .Title }}" />
+        </a>
+    </div>
+    {{ end }}
+
+    {{ partialCached "article/components/details" . .RelPermalink }}
+</header>
