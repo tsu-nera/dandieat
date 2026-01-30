@@ -2,6 +2,7 @@
 title: Dandieat Restart
 date: 2015-11-28 20:22:00+00:00
 url: /archives/986
+categories: ["グルメ"]
 ---
 
 Dandieat, 2年くらいほったらかしにしていたが、再び始めようと思う.

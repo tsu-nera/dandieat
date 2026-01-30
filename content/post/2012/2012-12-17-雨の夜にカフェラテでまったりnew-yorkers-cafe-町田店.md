@@ -2,6 +2,7 @@
 title: "雨の夜にカフェラテでまったり@NEW YORKER'S Cafe 町田店"
 date: 2012-12-17 19:29:43+00:00
 url: /archives/135
+categories: ["グルメ"]
 ---
 
 今日の夕食はカフェでまったり。

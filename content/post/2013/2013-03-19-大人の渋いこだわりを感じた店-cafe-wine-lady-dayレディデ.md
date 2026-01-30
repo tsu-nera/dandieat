@@ -2,6 +2,7 @@
 title: "大人の渋いこだわりを感じた店 『cafe & wine Lady Day(レディデイ）』町田"
 date: 2013-03-19 21:43:00+00:00
 url: /archives/744
+categories: ["グルメ"]
 ---
 
 町田のカフェ、バー、定食屋？（分類が難しい）cafe & wine Lady Dayで食事しました。

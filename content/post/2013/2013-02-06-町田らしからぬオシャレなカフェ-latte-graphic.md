@@ -2,6 +2,7 @@
 title: 町田らしからぬオシャレなカフェ LATTE GRAPHIC
 date: 2013-02-06 21:59:00+00:00
 url: /archives/619
+categories: ["グルメ"]
 ---
 
 町田に新しく誕生したカフェ「LATTE GRAPHIC」に行ってきました。

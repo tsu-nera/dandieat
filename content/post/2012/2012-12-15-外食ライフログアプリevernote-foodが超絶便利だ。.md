@@ -2,6 +2,7 @@
 title: 外食ライフログアプリ『Evernote food』が超絶便利だ。
 date: 2012-12-15 09:45:16+00:00
 url: /archives/106
+categories: ["グルメ"]
 ---
 
 Evernote FoodというiPhone/Androidアプリがある。

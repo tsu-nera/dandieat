@@ -2,6 +2,7 @@
 title: たっぷりサラダなモーニングセット BECK'S COFFEE SHOP 武蔵中原店
 date: 2013-02-11 21:32:00+00:00
 url: /archives/629
+categories: ["グルメ"]
 ---
 
 武蔵中原駅前のカフェ「BECK'S COFFEE SHOP 武蔵中原店」でモーニングセットを食べました。
