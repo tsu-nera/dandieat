@@ -1,115 +1,79 @@
 baseURL = "https://tsu-nera.github.io/dandieat/"
-title = "Dandieat"
-author = "きつね"
 languageCode = "ja-jp"
-enableInlineShortcodes = true
-theme = "Blonde"
-enableRobotsTXT = true
+title = "Dandieat"
+theme = "hugo-theme-stack"
 canonifyURLs = true
 
-# Please enable this feature if the site is available in Japanese, Chinese or Korean.
+# CJK言語のサポート
 hasCJKLanguage = true
+defaultContentLanguage = "ja"
+
+[pagination]
+pagerSize = 10
 
 [params]
-# Base color of the website.
-# https://tailwindcss.com/docs/background-color
-base_color = "bg-gray-800"
+mainSections = ["post"]
+rssFullContent = true
+favicon = "/img/default.jpg"
 
-#Site description
-description = "きつねの雑記ブログ"
+[params.footer]
+since = 2013
 
-# The number of articles to be displayed on a single page.
-paginator_pages = "5"
+[params.sidebar]
+emoji = "🦊"
+subtitle = "きつねの雑記ブログ"
 
-# Enable this if you want the archive list to be in a drop-down format.
-archive_dropdown = "false"
+[params.article]
+math = false
+toc = true
+readingTime = true
 
-# Number of tags to be displayed.
-tagsLimit = 20
+[params.article.license]
+enabled = false
 
-# Dark mode by default : dark
-# Light mode by default : light
-darkmode = "light"
+# ウィジェット設定
+[params.widgets]
+homepage = [
+    { type = "search" },
+    { type = "archives", params = { limit = 12 } },
+    { type = "categories", params = { limit = 10 } },
+    { type = "tag-cloud", params = { limit = 10 } }
+]
+page = [
+    { type = "toc" }
+]
 
-  [params.ad]
-    # Google AdSense
-    # ex. ca-pub-0000000000000000
-    googleAdSense = ""
+# コメント機能（無効化）
+[params.comments]
+enabled = false
 
-    # ex. 000000000
-    adslot = ""
+# 画像処理
+[params.imageProcessing.cover]
+enabled = true
 
-    # Placement of ads
-    postTop = false
-    postBottom = false
+[params.imageProcessing.content]
+enabled = true
 
-  [params.post]
-    # Show thumbnails
-    thumbnail = true
+# メニュー設定
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
 
-    # Disable the "NO IMAGE" image.
-    noimage = true
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 2
 
-    # See the Tailwind CSS documentation to set it up.
-    # Recommended settings are h-32 to h-48.
-    # https://tailwindcss.com/docs/height
-    thumbnail_height = "lg:h-44"
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 3
 
-    # https://tailwindcss.com/docs/width
-    thumbnail_width = "lg:w-auto"
-
-    # Number of characters in description
-    description = "130"
-
-  [params.widgets]
-    # Display widgets
-    display = true
-
-    # Order of widgets to display
-    widgets = ["search", "archive", "category", "tags", "recent"]
-
-[menu]
-
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 2
-
+# タクソノミー設定
 [taxonomies]
 category = "categories"
 tag = "tags"
-archive = "archives"
-
-[privacy]
-
-  [privacy.vimeo]
-    disabled = false
-    simple = true
-
-  [privacy.twitter]
-    disabled = false
-    enableDNT = true
-    simple = true
-
-  [privacy.instagram]
-    disabled = false
-    simple = true
-
-  [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true
-
-[services]
-
-  [services.instagram]
-    disableInlineCSS = true
-
-  [services.twitter]
-    disableInlineCSS = true

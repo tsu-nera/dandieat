@@ -2,3 +2,6 @@
 	path = themes/Blonde
 	url = https://github.com/opera7133/Blonde.git
 	ignore = dirty
+[submodule "themes/hugo-theme-stack"]
+	path = themes/hugo-theme-stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git
