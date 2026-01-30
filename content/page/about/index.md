@@ -1,9 +1,13 @@
-+++
-title = "Dandieat Manifest"
-date = 2024-03-23T00:00:00+09:00
-lastmod = 2024-03-23T21:32:55+09:00
-draft = false
-+++
+---
+title: "About"
+date: 2024-03-23
+slug: "about"
+menu:
+    main:
+        weight: 3
+        params:
+            icon: user
+---
 
 ## ダンディート美食批評宣言 {#322a55}
 
