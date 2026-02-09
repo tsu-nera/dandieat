@@ -12,7 +12,7 @@ defaultContentLanguage = "ja"
 pagerSize = 10
 
 [params]
-mainSections = ["post"]
+mainSections = ["post", "posts"]
 rssFullContent = true
 favicon = "/img/default.jpg"
 
